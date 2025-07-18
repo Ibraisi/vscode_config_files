@@ -6,9 +6,7 @@
   "window.commandCenter": false,
   "workbench.layoutControl.enabled": false,
   "chat.commandCenter.enabled": false,
-  "workbench.colorTheme": "Vim Deep Dark",
   "workbench.iconTheme": "material-icon-theme",
-
   // Vim extension settings
   "vim.leader": "<space>",
   "vim.useSystemClipboard": true,
@@ -19,7 +17,6 @@
   "vim.sneak": true,
   "vim.surround": true,
   "vim.useCtrlKeys": true,
-  
   // Critical: Delegate specific keys back to VSCode to avoid conflicts
   "vim.handleKeys": {
     "<C-a>": false,
@@ -32,178 +29,371 @@
     "<C-p>": false,
     "<C-w>": false
   },
-
   // Normal mode mappings - ONLY Vim-specific actions to avoid conflicts
   "vim.normalModeKeyBindingsNonRecursive": [
     // Core panel access (single keys - safe in Vim)
     {
-      "before": ["<leader>", "e"],
-      "commands": ["workbench.view.explorer"]
+      "before": [
+        "<leader>",
+        "e"
+      ],
+      "commands": [
+        "workbench.view.explorer"
+      ]
     },
     {
-      "before": ["<leader>", "r"],
-      "commands": ["workbench.view.debug"]
+      "before": [
+        "<leader>",
+        "r"
+      ],
+      "commands": [
+        "workbench.view.debug"
+      ]
     },
     {
-      "before": ["<leader>", "g"],
-      "commands": ["workbench.view.scm"]
+      "before": [
+        "<leader>",
+        "g"
+      ],
+      "commands": [
+        "workbench.view.scm"
+      ]
     },
     {
-      "before": ["<leader>", "x"],
-      "commands": ["workbench.view.extensions"]
+      "before": [
+        "<leader>",
+        "x"
+      ],
+      "commands": [
+        "workbench.view.extensions"
+      ]
     },
     {
-      "before": ["<leader>", "f"],
-      "commands": ["workbench.action.quickOpen"]
+      "before": [
+        "<leader>",
+        "f"
+      ],
+      "commands": [
+        "workbench.action.quickOpen"
+      ]
     },
     {
-      "before": ["<leader>", "o"],
-      "commands": ["workbench.action.gotoSymbol"]
+      "before": [
+        "<leader>",
+        "o"
+      ],
+      "commands": [
+        "workbench.action.gotoSymbol"
+      ]
     },
     {
-      "before": ["<leader>", "s"],
-      "commands": ["workbench.action.openSettings"]
+      "before": [
+        "<leader>",
+        "s"
+      ],
+      "commands": [
+        "workbench.action.openSettings"
+      ]
     },
     {
-      "before": ["<leader>", "c"],
-      "commands": ["workbench.action.showCommands"]
+      "before": [
+        "<leader>",
+        "c"
+      ],
+      "commands": [
+        "workbench.action.showCommands"
+      ]
     },
     {
-      "before": ["<leader>", "t"],
-      "commands": ["workbench.action.terminal.toggleTerminal"]
+      "before": [
+        "<leader>",
+        "t"
+      ],
+      "commands": [
+        "workbench.action.terminal.toggleTerminal"
+      ]
     },
     {
-      "before": ["<leader>", "i"],
-      "commands": ["workbench.action.chat.open"]
+      "before": [
+        "<leader>",
+        "i"
+      ],
+      "commands": [
+        "workbench.action.chat.open"
+      ]
     },
-    
     // Window management
     {
-      "before": ["<leader>", "v", "s"],
-      "commands": ["workbench.action.splitEditor"]
+      "before": [
+        "<leader>",
+        "v",
+        "s"
+      ],
+      "commands": [
+        "workbench.action.splitEditor"
+      ]
     },
     {
-      "before": ["<leader>", "w"],
-      "commands": ["workbench.action.navigateEditorGroups"]
+      "before": [
+        "<leader>",
+        "w"
+      ],
+      "commands": [
+        "workbench.action.navigateEditorGroups"
+      ]
     },
-    
     // EasyMotion jumping (leader + leader + motion)
     {
-      "before": ["<leader>", "<leader>", "w"],
-      "commands": ["extension.vim.easymotion.w"]
+      "before": [
+        "<leader>",
+        "<leader>",
+        "w"
+      ],
+      "commands": [
+        "extension.vim.easymotion.w"
+      ]
     },
     {
-      "before": ["<leader>", "<leader>", "b"],
-      "commands": ["extension.vim.easymotion.b"]
+      "before": [
+        "<leader>",
+        "<leader>",
+        "b"
+      ],
+      "commands": [
+        "extension.vim.easymotion.b"
+      ]
     },
     {
-      "before": ["<leader>", "<leader>", "j"],
-      "commands": ["extension.vim.easymotion.j"]
+      "before": [
+        "<leader>",
+        "<leader>",
+        "j"
+      ],
+      "commands": [
+        "extension.vim.easymotion.j"
+      ]
     },
     {
-      "before": ["<leader>", "<leader>", "k"],
-      "commands": ["extension.vim.easymotion.k"]
+      "before": [
+        "<leader>",
+        "<leader>",
+        "k"
+      ],
+      "commands": [
+        "extension.vim.easymotion.k"
+      ]
     },
     {
-      "before": ["<leader>", "<leader>", "f"],
-      "commands": ["extension.vim.easymotion.f"]
+      "before": [
+        "<leader>",
+        "<leader>",
+        "f"
+      ],
+      "commands": [
+        "extension.vim.easymotion.f"
+      ]
     },
     {
-      "before": ["<leader>", "<leader>", "s"],
-      "commands": ["extension.vim.easymotion.s"]
+      "before": [
+        "<leader>",
+        "<leader>",
+        "s"
+      ],
+      "commands": [
+        "extension.vim.easymotion.s"
+      ]
     },
-    
     // Select all
     {
-      "before": ["<leader>", "<leader>", "a"],
-      "commands": ["editor.action.selectAll"]
+      "before": [
+        "<leader>",
+        "<leader>",
+        "a"
+      ],
+      "commands": [
+        "editor.action.selectAll"
+      ]
     },
-    
     // File rename (requires File Utils extension)
     {
-      "before": ["<leader>", "n"],
-      "commands": ["fileutils.renameFile"]
+      "before": [
+        "<leader>",
+        "n"
+      ],
+      "commands": [
+        "fileutils.renameFile"
+      ]
     },
-    
     // Line movement with leader + space
     {
-      "before": ["<leader>", "<space>", "j"],
-      "commands": ["editor.action.moveLinesDownAction"]
+      "before": [
+        "<leader>",
+        "<space>",
+        "j"
+      ],
+      "commands": [
+        "editor.action.moveLinesDownAction"
+      ]
     },
     {
-      "before": ["<leader>", "<space>", "k"],
-      "commands": ["editor.action.moveLinesUpAction"]
+      "before": [
+        "<leader>",
+        "<space>",
+        "k"
+      ],
+      "commands": [
+        "editor.action.moveLinesUpAction"
+      ]
     },
-    
     // Clipboard operations
     {
-      "before": ["<leader>", "y"],
-      "after": ["\"+", "y"]
+      "before": [
+        "<leader>",
+        "y"
+      ],
+      "after": [
+        "\"+",
+        "y"
+      ]
     },
     {
-      "before": ["<leader>", "Y"],
-      "after": ["\"+", "Y"]
+      "before": [
+        "<leader>",
+        "Y"
+      ],
+      "after": [
+        "\"+",
+        "Y"
+      ]
     },
     {
-      "before": ["<leader>", "p"],
-      "after": ["\"+", "p"]
+      "before": [
+        "<leader>",
+        "p"
+      ],
+      "after": [
+        "\"+",
+        "p"
+      ]
     },
     {
-      "before": ["<leader>", "P"],
-      "after": ["\"+", "P"]
+      "before": [
+        "<leader>",
+        "P"
+      ],
+      "after": [
+        "\"+",
+        "P"
+      ]
     }
   ],
-
   // Visual mode mappings
   "vim.visualModeKeyBindingsNonRecursive": [
     // Rename selected text
     {
-      "before": ["<leader>", "n"],
-      "commands": ["editor.action.changeAll"]
+      "before": [
+        "<leader>",
+        "n"
+      ],
+      "commands": [
+        "editor.action.changeAll"
+      ]
     },
-    
     // Copy selection to clipboard
     {
-      "before": ["<leader>", "y"],
-      "after": ["\"+", "y"]
+      "before": [
+        "<leader>",
+        "y"
+      ],
+      "after": [
+        "\"+",
+        "y"
+      ]
     },
-    
     // Move selected text up/down
     {
-      "before": ["<leader>", "<space>", "j"],
-      "commands": ["editor.action.moveLinesDownAction"]
+      "before": [
+        "<leader>",
+        "<space>",
+        "j"
+      ],
+      "commands": [
+        "editor.action.moveLinesDownAction"
+      ]
     },
     {
-      "before": ["<leader>", "<space>", "k"],
-      "commands": ["editor.action.moveLinesUpAction"]
+      "before": [
+        "<leader>",
+        "<space>",
+        "k"
+      ],
+      "commands": [
+        "editor.action.moveLinesUpAction"
+      ]
     },
-    
     // EasyMotion in visual mode
     {
-      "before": ["<leader>", "<leader>", "w"],
-      "commands": ["extension.vim.easymotion.w"]
+      "before": [
+        "<leader>",
+        "<leader>",
+        "w"
+      ],
+      "commands": [
+        "extension.vim.easymotion.w"
+      ]
     },
     {
-      "before": ["<leader>", "<leader>", "b"],
-      "commands": ["extension.vim.easymotion.b"]
+      "before": [
+        "<leader>",
+        "<leader>",
+        "b"
+      ],
+      "commands": [
+        "extension.vim.easymotion.b"
+      ]
     },
     {
-      "before": ["<leader>", "<leader>", "j"],
-      "commands": ["extension.vim.easymotion.j"]
+      "before": [
+        "<leader>",
+        "<leader>",
+        "j"
+      ],
+      "commands": [
+        "extension.vim.easymotion.j"
+      ]
     },
     {
-      "before": ["<leader>", "<leader>", "k"],
-      "commands": ["extension.vim.easymotion.k"]
+      "before": [
+        "<leader>",
+        "<leader>",
+        "k"
+      ],
+      "commands": [
+        "extension.vim.easymotion.k"
+      ]
     }
   ],
-
   // Insert mode mappings
   "vim.insertModeKeyBindings": [
     {
-      "before": ["j", "k"],
-      "after": ["<Esc>"]
+      "before": [
+        "j",
+        "k"
+      ],
+      "after": [
+        "<Esc>"
+      ]
     }
   ],
   "window.menuBarVisibility": "compact",
-  "editor.lineNumbers": "off"
+  "editor.lineNumbers": "off",
+  "workbench.colorTheme": "Night Owl",
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "terminal.integrated.fontSize": 23,
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  }
 }

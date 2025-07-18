@@ -4,7 +4,6 @@
     "key": "ctrl+alt+v",
     "command": "toggleVim"
   },
-  
   // CRITICAL: Toggle Line Numbers On/Off
   {
     "key": "ctrl+alt+n",
@@ -18,13 +17,11 @@
       ]
     }
   },
-
   // CRITICAL: Toggle Title Bar/Header
   {
     "key": "ctrl+alt+h",
     "command": "workbench.action.toggleMenuBar"
   },
-
   // Window navigation improvements (using Ctrl to avoid conflicts)
   {
     "key": "ctrl+h",
@@ -33,7 +30,7 @@
   },
   {
     "key": "ctrl+l",
-    "command": "workbench.action.focusRightGroup", 
+    "command": "workbench.action.focusRightGroup",
     "when": "editorTextFocus"
   },
   {
@@ -46,20 +43,18 @@
     "command": "workbench.action.focusAboveGroup",
     "when": "editorTextFocus"
   },
-  
   // Advanced search (using Ctrl+Alt to avoid conflicts)
   {
     "key": "ctrl+alt+f",
     "command": "workbench.action.findInFiles"
   },
-  
   // Buffer/tab navigation (using Ctrl+Alt to avoid conflicts)
   {
     "key": "ctrl+alt+]",
     "command": "workbench.action.nextEditor"
   },
   {
-    "key": "ctrl+alt+[", 
+    "key": "ctrl+alt+[",
     "command": "workbench.action.previousEditor"
   },
   {
@@ -74,7 +69,6 @@
     "key": "ctrl+alt+shift+a",
     "command": "workbench.action.closeAllEditors"
   },
-  
   // Code actions (using Ctrl+Shift to avoid conflicts)
   {
     "key": "ctrl+shift+a",
@@ -101,14 +95,13 @@
     "command": "editor.action.showHover",
     "when": "editorTextFocus"
   },
-  
   // Git shortcuts (using Alt+G as prefix to avoid conflicts)
   {
     "key": "alt+g s",
     "command": "git.stage"
   },
   {
-    "key": "alt+g u", 
+    "key": "alt+g u",
     "command": "git.unstage"
   },
   {
@@ -131,7 +124,6 @@
     "key": "alt+g l",
     "command": "git.viewHistory"
   },
-  
   // File operations (using Alt+N as prefix to avoid conflicts)
   {
     "key": "alt+n f",
@@ -139,11 +131,10 @@
     "when": "explorerViewletVisible && filesExplorerFocus"
   },
   {
-    "key": "alt+n d", 
+    "key": "alt+n d",
     "command": "explorer.newFolder",
     "when": "explorerViewletVisible && filesExplorerFocus"
   },
-  
   // Panel toggles (using Alt+W as prefix to avoid conflicts)
   {
     "key": "alt+w h",
@@ -153,7 +144,6 @@
     "key": "alt+w p",
     "command": "workbench.action.togglePanel"
   },
-  
   // File explorer navigation when focused (using h/l without space to avoid conflicts)
   {
     "key": "h",
@@ -165,7 +155,6 @@
     "command": "list.expand",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus && !vim.active"
   },
-  
   // Quick workspace actions (using Ctrl+Alt to avoid conflicts)
   {
     "key": "ctrl+alt+r",
@@ -179,7 +168,6 @@
     "key": "ctrl+alt+s",
     "command": "workbench.action.openSettings"
   },
-  
   // Disable conflicting default bindings
   {
     "key": "ctrl+w",
@@ -188,5 +176,25 @@
   {
     "key": "ctrl+n",
     "command": "-workbench.action.files.newUntitledFile"
+  },
+  {
+    "key": "ctrl+numpad8",
+    "command": "editor.action.fontZoomIn",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+numpad2",
+    "command": "editor.action.fontZoomOut",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+numpad2",
+    "command": "workbench.action.terminal.fontZoomOut",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+numpad8",
+    "command": "workbench.action.terminal.fontZoomIn",
+    "when": "terminalFocus"
   }
 ]
