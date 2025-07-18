@@ -1,313 +1,209 @@
 {
-  "editor.scrollbar.vertical": "hidden",
-  "editor.scrollbar.horizontal": "hidden",
-  "editor.fontSize": 17,
-  "editor.matchBrackets": "never",
-  "editor.hideCursorInOverviewRuler": true,
-  "editor.overviewRulerBorder": false,
-  "editor.glyphMargin": false,
-  // This is for making the base-atelier-dune theme looks smooth on the variables
-  "editor.tokenColorCustomizations": {
-    //"variables": "#a6a28c",
-    "comments": "#2ea542",
-  },
-  // Suggestions
-  "editor.wordBasedSuggestions": "off",
-  "editor.acceptSuggestionOnEnter": "on",
-  "editor.quickSuggestions": {
-    "other": true,
-    "comments": false,
-    "strings": false
-  },
-  "editor.roundedSelection": false,
+  "window.titleBarStyle": "custom",
+  "window.customTitleBarVisibility": "never",
   "editor.minimap.enabled": false,
-  "editor.renderLineHighlight": "none",
-  "editor.cursorStyle": "block",
-  "editor.cursorBlinking": "solid",
-  "editor.folding": false,
-  "editor.autoClosingBrackets": "never",
-  "editor.insertSpaces": false,
-  "editor.formatOnSave": true,
-  "diffEditor.renderSideBySide": false,
-  // Vim setup
-  "vim.enableNeovim": false,
-  "vim.neovimPath": "/usr/bin/nvim",
-  "vim.searchHighlightColor": "rgba(150, 255, 255, 0.3)",
+  "editor.stickyScroll.enabled": false,
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
+  "chat.commandCenter.enabled": false,
+  "workbench.colorTheme": "Vim Deep Dark",
+  "workbench.iconTheme": "material-icon-theme",
+
+  // Vim extension settings
   "vim.leader": "<space>",
-  "vim.cursorStylePerMode.insert": "block",
-  "vim.easymotion": true,
-  "vim.incsearch": true,
   "vim.useSystemClipboard": true,
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.color": "rgba(250, 240, 170, 0.5)",
+  "vim.highlightedyank.duration": 300,
+  "vim.easymotion": true,
+  "vim.sneak": true,
+  "vim.surround": true,
   "vim.useCtrlKeys": true,
-  "vim.hlsearch": true,
+  
+  // Critical: Delegate specific keys back to VSCode to avoid conflicts
   "vim.handleKeys": {
     "<C-a>": false,
-    "<C-f>": false
+    "<C-f>": false,
+    "<C-h>": false,
+    "<C-j>": false,
+    "<C-k>": false,
+    "<C-l>": false,
+    "<C-n>": false,
+    "<C-p>": false,
+    "<C-w>": false
   },
+
+  // Normal mode mappings - ONLY Vim-specific actions to avoid conflicts
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // Core panel access (single keys - safe in Vim)
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.view.explorer"]
+    },
+    {
+      "before": ["<leader>", "r"],
+      "commands": ["workbench.view.debug"]
+    },
+    {
+      "before": ["<leader>", "g"],
+      "commands": ["workbench.view.scm"]
+    },
+    {
+      "before": ["<leader>", "x"],
+      "commands": ["workbench.view.extensions"]
+    },
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", "o"],
+      "commands": ["workbench.action.gotoSymbol"]
+    },
+    {
+      "before": ["<leader>", "s"],
+      "commands": ["workbench.action.openSettings"]
+    },
+    {
+      "before": ["<leader>", "c"],
+      "commands": ["workbench.action.showCommands"]
+    },
+    {
+      "before": ["<leader>", "t"],
+      "commands": ["workbench.action.terminal.toggleTerminal"]
+    },
+    {
+      "before": ["<leader>", "i"],
+      "commands": ["workbench.action.chat.open"]
+    },
+    
+    // Window management
+    {
+      "before": ["<leader>", "v", "s"],
+      "commands": ["workbench.action.splitEditor"]
+    },
+    {
+      "before": ["<leader>", "w"],
+      "commands": ["workbench.action.navigateEditorGroups"]
+    },
+    
+    // EasyMotion jumping (leader + leader + motion)
+    {
+      "before": ["<leader>", "<leader>", "w"],
+      "commands": ["extension.vim.easymotion.w"]
+    },
+    {
+      "before": ["<leader>", "<leader>", "b"],
+      "commands": ["extension.vim.easymotion.b"]
+    },
+    {
+      "before": ["<leader>", "<leader>", "j"],
+      "commands": ["extension.vim.easymotion.j"]
+    },
+    {
+      "before": ["<leader>", "<leader>", "k"],
+      "commands": ["extension.vim.easymotion.k"]
+    },
+    {
+      "before": ["<leader>", "<leader>", "f"],
+      "commands": ["extension.vim.easymotion.f"]
+    },
+    {
+      "before": ["<leader>", "<leader>", "s"],
+      "commands": ["extension.vim.easymotion.s"]
+    },
+    
+    // Select all
+    {
+      "before": ["<leader>", "<leader>", "a"],
+      "commands": ["editor.action.selectAll"]
+    },
+    
+    // File rename (requires File Utils extension)
+    {
+      "before": ["<leader>", "n"],
+      "commands": ["fileutils.renameFile"]
+    },
+    
+    // Line movement with leader + space
+    {
+      "before": ["<leader>", "<space>", "j"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    },
+    {
+      "before": ["<leader>", "<space>", "k"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    },
+    
+    // Clipboard operations
+    {
+      "before": ["<leader>", "y"],
+      "after": ["\"+", "y"]
+    },
+    {
+      "before": ["<leader>", "Y"],
+      "after": ["\"+", "Y"]
+    },
+    {
+      "before": ["<leader>", "p"],
+      "after": ["\"+", "p"]
+    },
+    {
+      "before": ["<leader>", "P"],
+      "after": ["\"+", "P"]
+    }
+  ],
+
+  // Visual mode mappings
+  "vim.visualModeKeyBindingsNonRecursive": [
+    // Rename selected text
+    {
+      "before": ["<leader>", "n"],
+      "commands": ["editor.action.changeAll"]
+    },
+    
+    // Copy selection to clipboard
+    {
+      "before": ["<leader>", "y"],
+      "after": ["\"+", "y"]
+    },
+    
+    // Move selected text up/down
+    {
+      "before": ["<leader>", "<space>", "j"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    },
+    {
+      "before": ["<leader>", "<space>", "k"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    },
+    
+    // EasyMotion in visual mode
+    {
+      "before": ["<leader>", "<leader>", "w"],
+      "commands": ["extension.vim.easymotion.w"]
+    },
+    {
+      "before": ["<leader>", "<leader>", "b"],
+      "commands": ["extension.vim.easymotion.b"]
+    },
+    {
+      "before": ["<leader>", "<leader>", "j"],
+      "commands": ["extension.vim.easymotion.j"]
+    },
+    {
+      "before": ["<leader>", "<leader>", "k"],
+      "commands": ["extension.vim.easymotion.k"]
+    }
+  ],
+
+  // Insert mode mappings
   "vim.insertModeKeyBindings": [
     {
-      "before": [
-        "j",
-        "j"
-      ],
-      "after": [
-        "<Esc>"
-      ]
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
     }
   ],
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": [
-        "<leader>",
-        "d"
-      ],
-      "after": [
-        "d",
-        "d"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "i"
-      ],
-      "after": [],
-      "commands": [
-        {
-          "command": "workbench.action.terminal.focus"
-        }
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "e"
-      ],
-      "after": [],
-      "commands": [
-        {
-          "command": "workbench.action.toggleSidebarVisibility"
-        }
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "u"
-      ],
-      "after": [],
-      "commands": [
-        {
-          "command": "workbench.action.focusActiveEditorGroup"
-        }
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "p"
-      ],
-      "after": [],
-      "commands": [
-        {
-          "command": "workbench.action.quickOpen"
-        }
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "o"
-      ],
-      "after": [],
-      "commands": [
-        {
-          "command": "workbench.action.quickOpen"
-        }
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "n"
-      ],
-      "after": [],
-      "commands": [
-        {
-          "command": "workbench.action.terminal.toggleTerminal"
-        }
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "v"
-      ],
-      "after": [],
-      "commands": [
-        {
-          "command": "workbench.action.splitEditor"
-        }
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "h"
-      ],
-      "after": [],
-      "commands": [
-        {
-          "command": "workbench.action.focusFirstEditorGroup"
-        }
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "l"
-      ],
-      "after": [],
-      "commands": [
-        {
-          "command": "workbench.action.focusSecondEditorGroup"
-        }
-      ]
-    },
-    {
-      "before": [
-        "<C-n>"
-      ],
-      "after": [],
-      "commands": [
-        {
-          "command": ":nohl"
-        }
-      ]
-    }
-  ],
-  "workbench.startupEditor": "newUntitledFile",
-  "javascript.format.enable": false,
-  "window.closeWhenEmpty": true,
-  "diffEditor.renderIndicators": false,
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "go.buildFlags": [
-    "-v"
-  ],
-  "go.useLanguageServer": true,
-  "go.autocompleteUnimportedPackages": true,
-  "go.testEnvFile": "",
-  "go.toolsManagement.autoUpdate": true,
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
-  },
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "editor.cursorSurroundingLines": 10,
-  "workbench.enableExperiments": false,
-  "explorer.compactFolders": false,
-  "telemetry.telemetryLevel": "off",
-  "vim.cursorStylePerMode.normal": "block",
-  "vim.neovimUseConfigFile": true,
-  "explorer.confirmDragAndDrop": false,
-  "editor.tabSize": 4,
-  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
-  "editor.wordWrap": "off",
-  "extensions.ignoreRecommendations": true,
-  "editor.guides.indentation": false,
-  "workbench.colorCustomizations": {
-    "[Vira*]": {
-      "toolbar.activeBackground": "#80CBC426",
-      "button.background": "#80CBC4",
-      "button.hoverBackground": "#80CBC4cc",
-      "extensionButton.separator": "#80CBC433",
-      "extensionButton.background": "#80CBC414",
-      "extensionButton.foreground": "#80CBC4",
-      "extensionButton.hoverBackground": "#80CBC433",
-      "extensionButton.prominentForeground": "#80CBC4",
-      "extensionButton.prominentBackground": "#80CBC414",
-      "extensionButton.prominentHoverBackground": "#80CBC433",
-      "activityBarBadge.background": "#80CBC4",
-      "activityBar.activeBorder": "#80CBC4",
-      "activityBarTop.activeBorder": "#80CBC4",
-      "list.inactiveSelectionIconForeground": "#80CBC4",
-      "list.activeSelectionForeground": "#80CBC4",
-      "list.inactiveSelectionForeground": "#80CBC4",
-      "list.highlightForeground": "#80CBC4",
-      "sash.hoverBorder": "#80CBC480",
-      "list.activeSelectionIconForeground": "#80CBC4",
-      "scrollbarSlider.activeBackground": "#80CBC480",
-      "editorSuggestWidget.highlightForeground": "#80CBC4",
-      "textLink.foreground": "#80CBC4",
-      "progressBar.background": "#80CBC4",
-      "pickerGroup.foreground": "#80CBC4",
-      "tab.activeBorder": "#80CBC4",
-      "notificationLink.foreground": "#80CBC4",
-      "editorWidget.resizeBorder": "#80CBC4",
-      "editorWidget.border": "#80CBC4",
-      "settings.modifiedItemIndicator": "#80CBC4",
-      "panelTitle.activeBorder": "#80CBC4",
-      "breadcrumb.activeSelectionForeground": "#80CBC4",
-      "menu.selectionForeground": "#80CBC4",
-      "menubar.selectionForeground": "#80CBC4",
-      "editor.findMatchBorder": "#80CBC4",
-      "selection.background": "#80CBC440",
-      "statusBarItem.remoteBackground": "#80CBC414",
-      "statusBarItem.remoteHoverBackground": "#80CBC4",
-      "statusBarItem.remoteForeground": "#80CBC4",
-      "notebook.inactiveFocusedCellBorder": "#80CBC480",
-      "commandCenter.activeBorder": "#80CBC480",
-      "chat.slashCommandForeground": "#80CBC4",
-      "chat.avatarForeground": "#80CBC4",
-      "activityBarBadge.foreground": "#000000",
-      "button.foreground": "#000000",
-      "statusBarItem.remoteHoverForeground": "#000000"
-    }
-  },
-  "workbench.colorTheme": "Night Owl Light",
-  "rust-analyzer.inlayHints.parameterHints.enable": false,
-  "rust-analyzer.inlayHints.typeHints.enable": false,
-  "rust-analyzer.inlayHints.typeHints.hideClosureInitialization": false,
-  "rust-analyzer.inlayHints.typeHints.hideNamedConstructor": false,
-  "rust-analyzer.inlayHints.lifetimeElisionHints.useParameterNames": false,
-  "rust-analyzer.inlayHints.reborrowHints.enable": "never",
-  "rust-analyzer.inlayHints.chainingHints.enable": false,
-  "rust-analyzer.inlayHints.bindingModeHints.enable": false,
-  "rust-analyzer.inlayHints.renderColons": false,
-  "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "never",
-  "rust-analyzer.inlayHints.closingBraceHints.enable": false,
-  "rust-analyzer.inlayHints.closureReturnTypeHints.enable": "never",
-  "rust-analyzer.inlayHints.closingBraceHints.minLines": 0,
-  "rust-analyzer.completion.callable.snippets": "none",
-  "rust-analyzer.semanticHighlighting.doc.comment.inject.enable": false,
-  "rust-analyzer.procMacro.ignored": {},
-  "workbench.activityBar.location": "hidden",
-  "workbench.panel.showLabels": false,
-  "terminal.integrated.defaultProfile.linux": "zsh",
-  "chat.commandCenter.enabled": false,
-  "workbench.layoutControl.enabled": false,
   "window.menuBarVisibility": "compact",
-  "window.commandCenter": false,
-  "editor.lineNumbers": "on",
-  "material-icon-theme.folders.color": "#7cb342",
-  "workbench.iconTheme": "vira-icons-graphene",
-  "terminal.integrated.fontSize": 30,
-  "keyboard.dispatch": "keyCode",
-  "vim.useSystemClipboard": true,
-  "vim.useCtrlKeys": true,
-  "workbench.preferredHighContrastColorTheme": "Solarized Dark",
-  "workbench.editor.showTabs": "single",
-  "debug.allowBreakpointsEverywhere": true,
-  "debug.showBreakpointsInOverviewRuler": true,
+  "editor.lineNumbers": "off"
 }
